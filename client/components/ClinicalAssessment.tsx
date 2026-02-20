@@ -1,6 +1,6 @@
 export default function ClinicalAssessment() {
   return (
-    <section className="w-full bg-white py-12 sm:py-16 md:py-20 lg:py-24">
+    <section className="mt-[-52px] w-full bg-white py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-[215px]">
         <div className="mx-auto max-w-[1455px]">
           {/* Badge */}
