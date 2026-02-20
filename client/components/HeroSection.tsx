@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+
 const CheckIcon = () => (
   <svg
     className="h-5 w-5 sm:h-6 sm:w-6"
@@ -23,6 +26,8 @@ const CheckIcon = () => (
 );
 
 export default function HeroSection() {
+  const [isWishlisted, setIsWishlisted] = useState(false);
+
   return (
     <section className="w-full bg-gradient-to-b from-[#F9FAFB] to-white">
       <div className="mx-auto max-w-[1920px] px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-[215px] lg:py-24">
@@ -144,8 +149,11 @@ export default function HeroSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-[22px]">
-              <button className="group flex w-full items-center justify-center gap-[3px] rounded-[18px] bg-[#155DFC] px-[20px] py-[18px] shadow-[0_28.333px_35.417px_-7.083px_rgba(43,127,255,0.25),0_11.333px_14.167px_-8.5px_rgba(43,127,255,0.25)] transition-all duration-300 hover:scale-105 hover:bg-[#0d4ed4] hover:shadow-2xl active:scale-95 sm:w-auto sm:rounded-[22.667px] sm:px-[23px] sm:py-[23px]">
+            <div className="flex flex-row items-center gap-3 sm:gap-[22px]">
+              <a
+                href="https://biov8.com.au/collections/programs/products/glow-stack-program-1?variant=47271501693177"
+                className="group flex flex-1 items-center justify-center gap-[3px] rounded-[18px] bg-[#155DFC] px-[20px] py-[18px] shadow-[0_28.333px_35.417px_-7.083px_rgba(43,127,255,0.25),0_11.333px_14.167px_-8.5px_rgba(43,127,255,0.25)] transition-all duration-300 hover:scale-105 hover:bg-[#0d4ed4] hover:shadow-2xl active:scale-95 sm:w-auto sm:flex-none sm:rounded-[22.667px] sm:px-[23px] sm:py-[23px]"
+              >
                 <span className="text-center font-jakarta text-[18px] font-bold leading-[28px] tracking-[-0.35px] text-white sm:text-[22.667px] sm:leading-[34px] sm:tracking-[-0.443px]">
                   Buy Program
                 </span>
@@ -165,11 +173,24 @@ export default function HeroSection() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </button>
+              </a>
 
-              <button className="group flex h-[64px] w-[96px] items-center justify-center rounded-[18px] border-2 border-black bg-white shadow-[0_11.333px_14.167px_-8.5px_rgba(43,127,255,0.25)] transition-all duration-300 hover:scale-110 hover:bg-black sm:h-[80px] sm:w-[120px] sm:rounded-[22.667px]">
+              <button
+                onClick={() => setIsWishlisted(!isWishlisted)}
+                className={cn(
+                  "group flex h-[64px] w-[96px] flex-shrink-0 items-center justify-center rounded-[18px] border-2 transition-all duration-300 hover:scale-110 sm:h-[80px] sm:w-[120px] sm:rounded-[22.667px]",
+                  isWishlisted
+                    ? "border-[#155DFC] bg-white shadow-[0_11.333px_14.167px_-8.5px_rgba(21,93,252,0.25)]"
+                    : "border-black bg-white hover:bg-black shadow-[0_11.333px_14.167px_-8.5px_rgba(43,127,255,0.25)]"
+                )}
+              >
                 <svg
-                  className="h-6 w-6 fill-black transition-colors duration-300 group-hover:fill-white sm:h-8 sm:w-8"
+                  className={cn(
+                    "h-6 w-6 transition-colors duration-300 sm:h-8 sm:w-8",
+                    isWishlisted
+                      ? "fill-[#155DFC]"
+                      : "fill-black group-hover:fill-white"
+                  )}
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
