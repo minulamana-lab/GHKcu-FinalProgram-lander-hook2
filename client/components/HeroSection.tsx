@@ -180,7 +180,7 @@ export default function HeroSection() {
                 className={cn(
                   "group flex h-[64px] w-[96px] items-center justify-center rounded-[18px] border-2 transition-all duration-300 hover:scale-110 sm:h-[80px] sm:w-[120px] sm:rounded-[22.667px]",
                   isWishlisted
-                    ? "border-[#FF4B4B] bg-white shadow-[0_11.333px_14.167px_-8.5px_rgba(255,75,75,0.25)]"
+                    ? "border-[#4E9A9B] bg-white shadow-[0_11.333px_14.167px_-8.5px_rgba(78,154,155,0.25)]"
                     : "border-black bg-white hover:bg-black shadow-[0_11.333px_14.167px_-8.5px_rgba(43,127,255,0.25)]"
                 )}
               >
@@ -188,7 +188,7 @@ export default function HeroSection() {
                   className={cn(
                     "h-6 w-6 transition-colors duration-300 sm:h-8 sm:w-8",
                     isWishlisted
-                      ? "fill-[#FF4B4B]"
+                      ? "fill-[#4E9A9B]"
                       : "fill-black group-hover:fill-white"
                   )}
                   viewBox="0 0 24 24"
