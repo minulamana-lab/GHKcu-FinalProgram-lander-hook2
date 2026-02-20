@@ -14,19 +14,19 @@ export default function Header() {
         {/* Navigation */}
         <nav className="hidden items-center gap-6 md:flex lg:gap-12">
           <a
-            href="#benefits"
+            href="https://biov8.com.au/pages/main-goal-page"
             className="text-[15px] leading-[22.5px] tracking-[-0.234px] text-[#4A5565] transition-colors hover:text-[#155DFC]"
           >
             GOALS
           </a>
           <a
-            href="#science"
+            href="https://biov8.com.au/pages/how-it-works-1"
             className="text-[15px] leading-[22.5px] tracking-[-0.234px] text-[#4A5565] transition-colors hover:text-[#155DFC]"
           >
             HOW IT WORKS
           </a>
           <a
-            href="#testimonials"
+            href="https://biov8.com.au/pages/programs-page "
             className="text-[15px] leading-[22.5px] tracking-[-0.234px] text-[#4A5565] transition-colors hover:text-[#155DFC]"
           >
             OUR PROGRAMS
