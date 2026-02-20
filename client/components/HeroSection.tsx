@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+
 const CheckIcon = () => (
   <svg
     className="h-5 w-5 sm:h-6 sm:w-6"
@@ -23,6 +26,8 @@ const CheckIcon = () => (
 );
 
 export default function HeroSection() {
+  const [isWishlisted, setIsWishlisted] = useState(false);
+
   return (
     <section className="w-full bg-gradient-to-b from-[#F9FAFB] to-white">
       <div className="mx-auto max-w-[1920px] px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-[215px] lg:py-24">
@@ -170,9 +175,22 @@ export default function HeroSection() {
                 </svg>
               </a>
 
-              <button className="group flex h-[64px] w-[96px] items-center justify-center rounded-[18px] border-2 border-black bg-white shadow-[0_11.333px_14.167px_-8.5px_rgba(43,127,255,0.25)] transition-all duration-300 hover:scale-110 hover:bg-black sm:h-[80px] sm:w-[120px] sm:rounded-[22.667px]">
+              <button
+                onClick={() => setIsWishlisted(!isWishlisted)}
+                className={cn(
+                  "group flex h-[64px] w-[96px] items-center justify-center rounded-[18px] border-2 transition-all duration-300 hover:scale-110 sm:h-[80px] sm:w-[120px] sm:rounded-[22.667px]",
+                  isWishlisted
+                    ? "border-[#FF4B4B] bg-white shadow-[0_11.333px_14.167px_-8.5px_rgba(255,75,75,0.25)]"
+                    : "border-black bg-white hover:bg-black shadow-[0_11.333px_14.167px_-8.5px_rgba(43,127,255,0.25)]"
+                )}
+              >
                 <svg
-                  className="h-6 w-6 fill-black transition-colors duration-300 group-hover:fill-white sm:h-8 sm:w-8"
+                  className={cn(
+                    "h-6 w-6 transition-colors duration-300 sm:h-8 sm:w-8",
+                    isWishlisted
+                      ? "fill-[#FF4B4B]"
+                      : "fill-black group-hover:fill-white"
+                  )}
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
